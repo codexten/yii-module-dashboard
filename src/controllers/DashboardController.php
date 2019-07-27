@@ -1,5 +1,6 @@
 <?php
 
+namespace codexten\yii\modules\dashboard\controllers;
 
 use codexten\yii\web\Controller;
 

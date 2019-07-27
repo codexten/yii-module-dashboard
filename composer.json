@@ -14,9 +14,12 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
+    "config-plugin": {
       "core": "config/core.php",
-      "moduleDashboard": "config/moduleDashboard.php"
+      "moduleDashboard": [
+        "$web",
+        "config/moduleDashboard.php"
+      ]
     }
   }
 }

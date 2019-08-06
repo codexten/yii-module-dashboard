@@ -1,13 +1,13 @@
 <?php
 
-use antkaz\vue\VueAsset;
+use \tolik505\vuejs\VueBundleAsset;
 use codexten\yii\modules\dashboard\widgets\DashboardWidget;
 use yii\web\View;
 
 /* @var $this View */
 /* @var $widget DashboardWidget */
 
-VueAsset::register($this);
+VueBundleAsset::register($this);
 $widget = $this->context;
 $app = "{$widget->id}-app";
 ?>

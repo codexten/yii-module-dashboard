@@ -11,6 +11,7 @@ class DashboardWidgetAsset extends \yii\web\AssetBundle
     public $js = [
 //        'https://unpkg.com/vue-loading-overlay@3.2.0/dist/vue-loading.min.js',
         'https://cdn.jsdelivr.net/npm/vue-loading-overlay@3',
+//        'https://cdn.jsdelivr.net/npm/vue-friendly-iframe',
         'js/script.js',
     ];
     public $css = [

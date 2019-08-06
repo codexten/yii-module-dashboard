@@ -13,7 +13,7 @@ $widget = $this->context;
 $app = "{$widget->id}-app";
 ?>
 
-<div class="panel panel-default"  id="<?= $app ?>">
+<div class="panel panel-default" id="<?= $app ?>">
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12">
@@ -21,6 +21,22 @@ $app = "{$widget->id}-app";
                     <i v-on:click="refresh" class="fa fa-refresh"></i>
                 </div>
             </div>
+        </div>
+
+        <div id="editor" ref="editor">HTML TABLE HERE</div>
+        <div
+                id="iframe-wrapper"
+                :style="iframe.wrapperStyle"
+        >
+            <iframe
+                    v-if="loaded"
+                    :src="iframe.src"
+                    :style="iframe.style"
+                    :height="iframe.style.height"
+                    :width="iframe.style.width"
+                    type="application/pdf"
+                    frameborder="0"
+            ></iframe>
         </div>
 
         <loading :active.sync="isLoading"
@@ -38,7 +54,13 @@ var app = new Vue({
   el: '#<?= $app ?>',
   data: {
     content: '',
-    isLoading: false
+    isLoading: false,
+    loaded: false,
+    iframe: {
+      src: '<?= $widget->renderUrl ?>',
+      style: null,
+      wrapperStyle: null,
+    }
   },
   methods: {
     refresh: function () {
@@ -55,7 +77,21 @@ var app = new Vue({
     }
   },
   mounted: function () {
-    this.render()
+    // this.render()
+    let editor = this.$refs.editor;
+    this.iframe.style = {
+      position: 'absolute',
+      width: window.innerWidth,
+      height: window.innerHeight,
+      top: -editor.offsetTop + "px",
+      left: -editor.offsetLeft + "px",
+    }
+    this.iframe.wrapperStyle = {
+      overflow: 'hidden',
+      height: editor.clientHeight + "px",
+      width: editor.clientWidth + "px",
+    }
+    this.loaded = true;
   }
 
 })

@@ -1,13 +1,14 @@
 <?php
 
-use \tolik505\vuejs\VueBundleAsset;
 use codexten\yii\modules\dashboard\widgets\DashboardWidget;
+use tolik505\vuejs\VueBundleAsset;
 use yii\web\View;
 
 /* @var $this View */
 /* @var $widget DashboardWidget */
 
 VueBundleAsset::register($this);
+
 $widget = $this->context;
 $app = "{$widget->id}-app";
 ?>
@@ -17,11 +18,8 @@ $app = "{$widget->id}-app";
 
 <div id="<?= $app ?>" class="vue">
 
-    <p>{{ message }}</p>
-    <button v-on:click="reverseMessage">Reverse Message</button>
-    <div class="content">
-        {{ content }}
-    </div>
+    <button v-on:click="refresh">refresh</button>
+    <div v-html="content"></div>
 
 </div>
 
@@ -29,25 +27,20 @@ $app = "{$widget->id}-app";
 var app = new Vue({
   el: '#<?= $app ?>',
   data: {
-    message: '<?= $widget->renderUrl ?>'
+    content: ''
   },
   methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
+    refresh: function () {
+      this.render()
+    },
+    render: function () {
+      axios
+        .get('<?= $widget->renderUrl ?>')
+        .then(response => (this.content = response.data))
     }
   },
   mounted: function () {
-    var self = this;
-    $.ajax({
-      url: '<?= $widget->renderUrl ?>',
-      method: 'GET',
-      success: function (data) {
-        self.content = data;
-      },
-      error: function (error) {
-        console.log(error);
-      }
-    });
+    this.render()
   }
 
 })

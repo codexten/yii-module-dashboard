@@ -12,21 +12,25 @@ DashboardWidgetAsset::register($this);
 $widget = $this->context;
 $app = "{$widget->id}-app";
 ?>
-<?php
 
-?>
+<div class="panel panel-default"  id="<?= $app ?>">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <i v-on:click="refresh" class="fa fa-refresh"></i>
+                </div>
+            </div>
+        </div>
 
-<div id="<?= $app ?>" class="vue">
+        <loading :active.sync="isLoading"
+                 :can-cancel="false"
+                 :is-full-page="false"
+                 :loader="'dots'"
+                 :color="'#007BFF'"></loading>
+        <div v-html="content"></div>
 
-    <loading :active.sync="isLoading"
-             :can-cancel="false"
-             :is-full-page="false"
-             :loader="'dots'"
-             :color="'#007BFF'"></loading>
-
-    <button v-on:click="refresh">refresh</button>
-    <div v-html="content"></div>
-
+    </div>
 </div>
 
 <script>
@@ -42,10 +46,10 @@ var app = new Vue({
     },
     render: function () {
       this.isLoading = true
-      axios
-        .get('<?= $widget->renderUrl ?>')
-        .then(response => (this.content = response.data))
       setTimeout(() => {
+        axios
+          .get('<?= $widget->renderUrl ?>')
+          .then(response => (this.content = response.data))
         this.isLoading = false
       }, 500)
     }

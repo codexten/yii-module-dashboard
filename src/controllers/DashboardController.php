@@ -11,4 +11,9 @@ class DashboardController extends Controller
         return $this->render('index');
     }
 
+    public function actionRenderWidget($id)
+    {
+        return $this->renderAjax("widgets/{$id}");
+    }
+
 }

@@ -3,7 +3,8 @@
   "type": "library",
   "description": "dashboard module for yii 2.0 or higher",
   "require": {
-    "codexten/yii-web": "~2.0.0"
+    "codexten/yii-web": "~2.0.0",
+    "antkaz/yii2-vue": "~1.0"
   },
   "autoload": {
     "psr-4": {

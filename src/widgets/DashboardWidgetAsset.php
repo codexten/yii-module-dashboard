@@ -12,6 +12,7 @@ class DashboardWidgetAsset extends \yii\web\AssetBundle
 //        'https://unpkg.com/vue-loading-overlay@3.2.0/dist/vue-loading.min.js',
         'https://cdn.jsdelivr.net/npm/vue-loading-overlay@3',
 //        'https://cdn.jsdelivr.net/npm/vue-friendly-iframe',
+        'https://raw.githubusercontent.com/devstark-com/vue-google-charts/master/dist/vue-google-charts.browser.js',
         'js/script.js',
     ];
     public $css = [

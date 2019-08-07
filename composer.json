@@ -4,6 +4,7 @@
   "description": "dashboard module for yii 2.0 or higher",
   "require": {
     "codexten/yii-web": "~2.0.0",
+    "npm/vue-google-charts": "~2.0.0",
     "tolik505/yii2-vuejs-assets": "*"
   },
   "autoload": {

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'title' => $this->title,
 ]) ?>
 
-<?php $page->beginContent('content') ?>
+<?php $page->beginContent('index/_content') ?>
 
 {{message}}
 

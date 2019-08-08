@@ -13,9 +13,9 @@ $this->params['breadcrumbs'][] = $this->title;
     'title' => $this->title,
 ]) ?>
 
-<?php $page->beginContent('index/_content') ?>
+<?php $page->beginContent('content') ?>
 
-{{message}}
+<?= $this->render('index/_content') ?>
 
 <?php $page->endContent() ?>
 

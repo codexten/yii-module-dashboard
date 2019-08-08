@@ -7,7 +7,7 @@ use yii\web\View;
 /* @var $this View */
 /* @var $widget DashboardWidget */
 
-DashboardWidgetAsset::register($this);
+//DashboardWidgetAsset::register($this);
 
 $widget = $this->context;
 $app = "{$widget->id}-app";

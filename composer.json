@@ -8,8 +8,7 @@
   },
   "autoload": {
     "psr-4": {
-      "codexten\\yii\\modules\\dashboard\\": "src/module",
-      "codexten\\yii\\web\\assets\\modules\\dashboard": "src/asset"
+      "codexten\\yii\\modules\\dashboard\\": "src/module"
     }
   },
   "extra": {

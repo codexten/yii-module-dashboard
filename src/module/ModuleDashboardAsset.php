@@ -14,9 +14,9 @@ class ModuleDashboardAsset extends \yii\web\AssetBundle
     public $css = [
         'yii-module-dashboard.css',
     ];
-//    public $jsOptions = [
-//        'position' => View::POS_HEAD,
-//    ];
+    public $jsOptions = [
+        'position' => View::POS_HEAD,
+    ];
     public $depends = [
         VueAsset::class,
     ];

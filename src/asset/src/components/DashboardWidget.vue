@@ -22,32 +22,27 @@ export default {
         message: 'hai',
         // Array will be automatically processed with visualization.arrayToDataTable function
         chartData: [
-          ['', '', ''],
-          ['Jan', 7, 7],
-          ['Feb', 9, 9],
-          ['Mar', 12, 12],
-          ['Apr', 6, 6],
-          ['May', 10, 10],
-          ['June', 8, 8],
-          ['July', 5, 5],
-          ['Aug', 13, 13],
-          ['Sep', 12, 12],
-          ['Oct', 10, 10],
-          ['Nov', 9, 9],
-          ['Dec', 8, 8],
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350],
         ],
         chartOptions: {
           chart: {
-            title: 'Monthly Coffee Production by Country',
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
           },
         },
-      }
+      },
     }
   },
   methods: {
     refresh: function () {
-    },
-  },
+    }
+    ,
+  }
+  ,
 }
 </script>
 

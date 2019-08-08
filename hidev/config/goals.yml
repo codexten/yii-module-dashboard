@@ -1,7 +1,0 @@
-siteApp:
-  path: .
-  public:
-    site:
-      media:
-        gnt:
-          symlink: '../../../vendor/codexten/gnt-core/media'

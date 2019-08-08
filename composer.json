@@ -8,7 +8,8 @@
   },
   "autoload": {
     "psr-4": {
-      "codexten\\yii\\modules\\dashboard\\": "src"
+      "codexten\\yii\\modules\\dashboard\\": "src/module",
+      "codexten\\yii\\web\\assets\\modules\\dashboard": "src/asset"
     }
   },
   "extra": {
@@ -16,7 +17,6 @@
       "dev-master": "2.0.x-dev"
     },
     "config-plugin": {
-      "hidev": "hidev/config/hidev.php",
       "core": "config/core.php",
       "moduleDashboard": [
         "$web",

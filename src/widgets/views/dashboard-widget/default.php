@@ -11,6 +11,7 @@ DashboardWidgetAsset::register($this);
 
 $widget = $this->context;
 $app = "{$widget->id}-app";
+$npm = Yii::getAlias('@vendor/npm-asset');
 ?>
 
 <div class="panel panel-default" id="<?= $app ?>">
@@ -22,12 +23,8 @@ $app = "{$widget->id}-app";
                 </div>
             </div>
         </div>
-
-        <GChart
-                type="ColumnChart"
-                :data="chartData"
-                :options="chartOptions"
-        />
+        <span>Hello</span>
+        <test></test>
 
         <loading :active.sync="isLoading"
                  :can-cancel="false"
@@ -61,6 +58,12 @@ var app = new Vue({
     }
   },
   methods: {
+    startCallBack: function (x) {
+      console.log(x)
+    },
+    endCallBack: function (x) {
+      console.log(x)
+    },
     refresh: function () {
       this.render()
     },

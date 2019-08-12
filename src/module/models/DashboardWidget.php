@@ -2,6 +2,7 @@
 
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
+
 /**
  * Class DashboardWidget
  */

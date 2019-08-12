@@ -1,22 +1,19 @@
 <template>
     <div>
         <GChart
-                type="ColumnChart"
+                :type="type"
                 :data="data"
-                :options="options"
+                :options="chartOptions"
+                :settings="settings"
         />
     </div>
 </template>
 <script>
 module.exports = {
   name: 'chart',
-  props: ['data', 'options'],
+  props: ['type', 'data', 'chartOptions', 'settings'],
 }
 </script>
 
 <style scoped>
-    p {
-        font-size: 2em;
-        text-align: center;
-    }
 </style>

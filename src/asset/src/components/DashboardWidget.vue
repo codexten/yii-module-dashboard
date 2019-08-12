@@ -37,10 +37,15 @@ export default {
   methods: {
     fetch: function () {
       this.isLoading = true
+      var $this = this
       setTimeout(() => {
         axios
           .get(this.fetchUrl)
           .then(response => (this.data = response.data.data))
+          .catch(function (error) {
+            // handle error
+            console.log(error)
+          })
         this.isLoading = false
       }, 500)
     },

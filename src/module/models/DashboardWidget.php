@@ -1,5 +1,7 @@
 <?php
 
+namespace codexten\yii\modules\dashboard\modules\models;
+
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
 
@@ -11,7 +13,7 @@ use codexten\yii\modules\auth\models\User;
  * @property int $id
  * @property int $user_id
  * @property string $code
- * @property text $data
+ * @property string $data
  * @property int $status
  * @property int $created_at
  * @property int $updated_at

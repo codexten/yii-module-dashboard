@@ -21,13 +21,14 @@
     },
     "config-plugin": {
       "core": "config/core.php",
-      "moduleDashboard": [
-        "$web",
-        "config/moduleDashboard.php"
-      ],
       "moduleDashboardApi": [
         "$moduleApi",
         "config/moduleDashboardApi.php"
+      ],
+      "moduleDashboard": [
+        "$web",
+        "$moduleDashboardApi",
+        "config/moduleDashboard.php"
       ],
       "migrationNamespaces": "config/migrationNamespaces.php"
     }

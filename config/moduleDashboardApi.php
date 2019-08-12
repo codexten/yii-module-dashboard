@@ -23,6 +23,7 @@ return [
                         'api/dashboard-widget',
                     ],
                 ],
+                '/api/dashboard-widget/<code>/refresh' => '/api/dashboard-widget/refresh',
             ],
         ],
     ],

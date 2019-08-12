@@ -5,11 +5,11 @@ namespace codexten\yii\modules\dashboard\migrations;
 use yii\db\Migration;
 
 /**
- * Class M190710044847Create_dashboard_widget_table
+ * Class M190711144847Create_dashboard_widget_table
  *
  * @package codexten\yii\modules\dashboard\migrations
  */
-class M190710044847Create_dashboard_widget_table extends Migration
+class M190711144847Create_dashboard_widget_table extends Migration
 {
     /**
      * {@inheritdoc}

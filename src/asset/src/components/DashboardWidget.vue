@@ -8,39 +8,41 @@
                     </div>
                 </div>
             </div>
-            <slot v-bind:data="data"></slot>
+            <slot v-if="this.isLoading==false" v-bind:data="data"></slot>
+            <loading :active.sync="isLoading"
+                     :can-cancel="false"
+                     :is-full-page="false"
+                     :loader="'dots'"
+                     :color="'#007BFF'"></loading>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
+import Loading from 'vue-loading-overlay'
+
 export default {
   name: 'dashboard-widget',
   props: ['fetchUrl'],
+  components: {
+    Loading,
+  },
   data () {
     return {
-      data: {
-        message: 'hai',
-        // Array will be automatically processed with visualization.arrayToDataTable function
-        chartData: [
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350],
-        ],
-        chartOptions: {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-        },
-      },
+      isLoading: true,
+      data: {},
     }
   },
   methods: {
     fetch: function () {
-      console.log(this.fetchUrl)
+      this.isLoading = true
+      setTimeout(() => {
+        axios
+          .get(this.fetchUrl)
+          .then(response => (this.data = response.data.data))
+        this.isLoading = false
+      }, 500)
     },
     refresh: function () {
       this.fetch()

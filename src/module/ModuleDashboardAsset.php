@@ -2,6 +2,7 @@
 
 namespace codexten\yii\modules\dashboard;
 
+use codexten\yii\web\assets\axios\AxiosAsset;
 use codexten\yii\web\assets\vue\VueAsset;
 use yii\web\View;
 
@@ -19,6 +20,6 @@ class ModuleDashboardAsset extends \yii\web\AssetBundle
     ];
     public $depends = [
         VueAsset::class,
-
+//        AxiosAsset::class,
     ];
 }

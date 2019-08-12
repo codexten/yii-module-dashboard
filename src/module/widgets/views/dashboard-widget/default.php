@@ -41,7 +41,7 @@ var app = new Vue({
   el: '#<?= $app ?>',
   data: {
     content: '',
-    isLoading: false,
+    isLoading: true,
     loaded: false,
     chartData: [
       ['Year', 'Sales', 'Expenses', 'Profit'],

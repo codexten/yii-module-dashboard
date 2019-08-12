@@ -9,3 +9,4 @@ migration:
       updated_at:integer
 model:
   dashboard_widget:
+  ns: codexten\yii\modules\dashboard\models

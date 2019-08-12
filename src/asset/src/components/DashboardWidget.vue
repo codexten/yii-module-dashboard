@@ -16,6 +16,7 @@
 <script>
 export default {
   name: 'dashboard-widget',
+  props: ['fetchUrl'],
   data () {
     return {
       data: {
@@ -38,11 +39,16 @@ export default {
     }
   },
   methods: {
+    fetch: function () {
+      console.log(this.fetchUrl)
+    },
     refresh: function () {
-    }
-    ,
-  }
-  ,
+      this.fetch()
+    },
+  },
+  mounted: function () {
+    this.fetch()
+  },
 }
 </script>
 

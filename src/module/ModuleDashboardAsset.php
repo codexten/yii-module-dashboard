@@ -19,5 +19,6 @@ class ModuleDashboardAsset extends \yii\web\AssetBundle
     ];
     public $depends = [
         VueAsset::class,
+
     ];
 }

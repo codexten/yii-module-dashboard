@@ -1,0 +1,11 @@
+migration:
+  create_dashboard_widget_table:
+    fields: |
+      user_id:integer:notNull:foreignKey(user),
+      code:string(50),
+      data:text,
+      status:smallInteger,
+      created_at:integer,
+      updated_at:integer
+model:
+  dashboard_widget:

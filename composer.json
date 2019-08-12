@@ -21,7 +21,8 @@
       "moduleDashboard": [
         "$web",
         "config/moduleDashboard.php"
-      ]
+      ],
+      "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }
 }

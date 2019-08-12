@@ -4,6 +4,18 @@ use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
 
 /**
+ * This is the model class for table "{{%dashboard_widget}}".
+ *
+ * Database fields:
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $code
+ * @property text $data
+ * @property int $status
+ * @property int $created_at
+ * @property int $updated_at
+ *
  * Class DashboardWidget
  */
 class DashboardWidget extends ActiveRecord

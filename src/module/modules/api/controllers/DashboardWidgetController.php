@@ -11,12 +11,14 @@ class DashboardWidgetController extends ActiveController
     public function actionRefresh($code)
     {
         $model = DashboardWidget::find()->byUserId(UserHelper::getMyId())->byCode($code)->one();
-        if ($model === null) {
-            $model = new DashboardWidget([
-                'code' => $code,
-                'user_id' => UserHelper::getMyId(),
-            ]);
-            $model->save();
-        }
+//        if ($model === null) {
+//            $model = new DashboardWidget([
+//                'code' => $code,
+//                'user_id' => UserHelper::getMyId(),
+//            ]);
+//            $model->save();
+//        }
     }
+
+
 }

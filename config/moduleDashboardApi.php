@@ -24,6 +24,7 @@ return [
                     ],
                 ],
                 '/api/dashboard-widget/<code>/refresh' => '/api/dashboard-widget/refresh',
+                '/api/dashboard-widget/<code>/fetch' => '/api/dashboard-widget/refresh',
             ],
         ],
     ],

@@ -109,11 +109,13 @@ class DashboardController extends Controller
                 'chartOptions' => [
                     'title' => 'Optimization Performance Chart',
                     'vAxis' => [
-                        'title' => 'Count',
+                        'title' => 'No Of TRs',
                     ],
                     'hAxis' => [
                         'title' => 'Month',
                     ],
+                    'width' => 640,
+                    'height' => 480,
                 ],
                 'settings' => [
                     'packages' => [

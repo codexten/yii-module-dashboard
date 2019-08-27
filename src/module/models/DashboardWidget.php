@@ -4,6 +4,7 @@ namespace codexten\yii\modules\dashboard\models;
 
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
+use paulzi\jsonBehavior\JsonBehavior;
 use Yii;
 use codexten\yii\modules\dashboard\models\query\DashboardWidgetQuery;
 
@@ -49,6 +50,20 @@ class DashboardWidget extends ActiveRecord
                 'targetAttribute' => ['user_id' => 'id'],
             ],
         ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors[] = [
+            'class' => JsonBehavior::class,
+            'attributes' => ['data'],
+        ];
+
+        return $behaviors;
     }
 
     /**

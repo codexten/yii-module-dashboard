@@ -18,13 +18,13 @@ return [
     'components' => [
         'urlManager' => [
             'rules' => [
-                'api' => [
-                    'controller' => [
-                        'api/dashboard-widget',
-                    ],
-                ],
-                '/api/dashboard-widget/<code>/refresh' => '/api/dashboard-widget/refresh',
-                '/api/dashboard-widget/<code>/fetch' => '/api/dashboard-widget/refresh',
+//                'api' => [
+//                    'controller' => [
+//                        'api/dashboard-widget',
+//                    ],
+//                ],
+//                '/api/dashboard-widget/<code>/refresh' => '/api/dashboard-widget/refresh',
+                '/api/dashboard-widget/<code>' => '/api/dashboard-widget/view',
             ],
         ],
     ],

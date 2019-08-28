@@ -5,15 +5,8 @@ namespace codexten\yii\modules\dashboard\widgets;
 use codexten\yii\modules\dashboard\base\Widget;
 use yii\helpers\Url;
 
-class DashboardWidget extends Widget
+class DashboardWidget extends Widget implements DashboardWidgetInterface
 {
-    public $fetchUrl;
+    use DashboardWidgetTrait;
 
-    public function init()
-    {
-        if (is_array($this->fetchUrl)) {
-            $this->fetchUrl = Url::to($this->fetchUrl);
-        }
-        parent::init();
-    }
 }

@@ -28,7 +28,6 @@ class DashboardWidgetAsset extends AssetBundle
     ];
 
     public $depends = [
-        VueBundleAsset::class,
         GoogleChartAsset::class,
     ];
 }

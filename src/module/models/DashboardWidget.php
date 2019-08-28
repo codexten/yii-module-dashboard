@@ -1,5 +1,5 @@
 <?php
-
+namespace codexten\yii\modules\dashboard\models;
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
 

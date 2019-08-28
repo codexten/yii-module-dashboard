@@ -82,7 +82,6 @@ class DashboardController extends Controller
     }
 
 
-
     public function actionGauge()
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
@@ -151,6 +150,57 @@ class DashboardController extends Controller
                             'type' => 'line',
                         ],
                     ],
+                ],
+                'settings' => [
+                    'packages' => [
+                        'corechart',
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function actionPieChart()
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'data' => [
+                'type' => 'PieChart',
+                'chartData' => [
+                    ['A', 'B'],
+                    ['Savings', 40000],
+                    ['Bidded Cost', 60000],
+
+                ],
+                'chartOptions' => [
+                    'width' => 640,
+                    'height' => 480,
+                    'legacyScatterChartLabels' => true,
+                    'is3D' => false,
+                    'pieHole' => '0.25',
+                    'booleanRole' => 'certainty',
+                    'slices' => [
+                        0 => [
+                            'color' => '#6d9eeb',
+                        ],
+                        1 => [
+                            'color' => '#666666',
+                        ],
+                    ]
+//                    'title' => 'Monthly Coffee Production by Country',
+//                    'vAxis' => [
+//                        'title' => 'Count',
+//                    ],
+//                    'hAxis' => [
+//                        'title' => 'Month',
+//                    ],
+//                    'seriesType' => 'bars',
+//                    'series' => [
+//                        1 => [
+//                            'type' => 'line',
+//                        ],
+//                    ],
                 ],
                 'settings' => [
                     'packages' => [

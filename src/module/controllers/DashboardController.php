@@ -42,6 +42,44 @@ class DashboardController extends Controller
 //        ];
 //    }
 
+    public function actionColumnChart()
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'data' => [
+                'type' => 'ColumnChart',
+                'chartData' => [
+                    ['', 'This Month', 'This Week', 'Today'],
+                    ['Jan', 5000, 4000,],
+                    ['Feb', 2500, 2000,],
+                    ['Mar', 4000, 2500,],
+                    ['Apr', 4500, 2300,],
+                    ['May', 3000, 1500,],
+                    ['June', 4000, 2000,],
+                    ['July', 4800, 2400,],
+                    ['Aug', 5000, 2500,],
+                ],
+                'chartOptions' => [
+                    'title' => 'Optimization Performance Chart',
+                    'vAxis' => [
+                        'title' => 'No Of TRs',
+                    ],
+                    'hAxis' => [
+                        'title' => 'Month',
+                    ],
+                    'width' => 640,
+                    'height' => 480,
+                ],
+                'settings' => [
+                    'packages' => [
+                        'corechart',
+                    ],
+                ],
+            ],
+        ];
+    }
+
 
     public function actionSteppedAreaChart()
     {

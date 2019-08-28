@@ -42,51 +42,6 @@ class DashboardController extends Controller
 //        ];
 //    }
 
-    public function actionTest()
-    {
-        \Yii::$app->response->format = Response::FORMAT_JSON;
-
-        return [
-            'data' => [
-                'type' => 'ComboChart',
-                'chartData' => [
-                    ['Month', 'count', 'avg'],
-                    ['Jan', 7, 7],
-                    ['Feb', 9, 9],
-                    ['Mar', 12, 12],
-                    ['Apr', 6, 6],
-                    ['May', 10, 10],
-                    ['June', 8, 8],
-                    ['July', 5, 5],
-                    ['Aug', 13, 13],
-                    ['Sep', 12, 12],
-                    ['Oct', 10, 10],
-                    ['Nov', 9, 9],
-                    ['Dec', 8, 8],
-                ],
-                'chartOptions' => [
-                    'title' => 'Monthly Coffee Production by Country',
-                    'vAxis' => [
-                        'title' => 'Count',
-                    ],
-                    'hAxis' => [
-                        'title' => 'Month',
-                    ],
-                    'seriesType' => 'bars',
-                    'series' => [
-                        1 => [
-                            'type' => 'line',
-                        ],
-                    ],
-                ],
-                'settings' => [
-                    'packages' => [
-                        'corechart',
-                    ],
-                ],
-            ],
-        ];
-    }
 
     public function actionSteppedAreaChart()
     {
@@ -126,6 +81,8 @@ class DashboardController extends Controller
         ];
     }
 
+
+
     public function actionGauge()
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
@@ -152,6 +109,52 @@ class DashboardController extends Controller
                 'settings' => [
                     'packages' => [
                         ['corechart', 'gauge',],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function actionComboChart()
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'data' => [
+                'type' => 'ComboChart',
+                'chartData' => [
+                    ['Month', 'count', 'avg'],
+                    ['Jan', 7, 7],
+                    ['Feb', 9, 9],
+                    ['Mar', 12, 12],
+                    ['Apr', 6, 6],
+                    ['May', 10, 10],
+                    ['June', 8, 8],
+                    ['July', 5, 5],
+                    ['Aug', 13, 13],
+                    ['Sep', 12, 12],
+                    ['Oct', 10, 10],
+                    ['Nov', 9, 9],
+                    ['Dec', 8, 8],
+                ],
+                'chartOptions' => [
+                    'title' => 'Monthly Coffee Production by Country',
+                    'vAxis' => [
+                        'title' => 'Count',
+                    ],
+                    'hAxis' => [
+                        'title' => 'Month',
+                    ],
+                    'seriesType' => 'bars',
+                    'series' => [
+                        1 => [
+                            'type' => 'line',
+                        ],
+                    ],
+                ],
+                'settings' => [
+                    'packages' => [
+                        'corechart',
                     ],
                 ],
             ],

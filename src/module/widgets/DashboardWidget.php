@@ -7,14 +7,12 @@ use yii\helpers\Url;
 
 class DashboardWidget extends Widget
 {
-    public $refreshUrl;
     public $fetchUrl;
-    public $renderUrl;
 
     public function init()
     {
-        if (is_array($this->renderUrl)) {
-            $this->renderUrl = Url::to($this->renderUrl);
+        if (is_array($this->fetchUrl)) {
+            $this->fetchUrl = Url::to($this->fetchUrl);
         }
         parent::init();
     }

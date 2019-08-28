@@ -1,20 +1,11 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="pull-right">
-                        <i v-on:click="refresh" class="fa fa-refresh"></i>
-                    </div>
-                </div>
-            </div>
-            <slot v-if="this.isLoading==false" v-bind:data="data"></slot>
-            <loading :active.sync="isLoading"
-                     :can-cancel="false"
-                     :is-full-page="false"
-                     :loader="'dots'"
-                     :color="'#007BFF'"></loading>
-        </div>
+    <div>
+        <slot v-if="this.isLoading==false" v-bind:data="data"></slot>
+        <loading :active.sync="isLoading"
+                 :can-cancel="false"
+                 :is-full-page="false"
+                 :loader="'dots'"
+                 :color="'#007BFF'"></loading>
     </div>
 </template>
 
@@ -37,7 +28,6 @@ export default {
   methods: {
     fetch: function () {
       this.isLoading = true
-      var $this = this
       setTimeout(() => {
         axios
           .get(this.fetchUrl)

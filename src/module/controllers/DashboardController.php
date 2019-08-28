@@ -125,4 +125,36 @@ class DashboardController extends Controller
             ],
         ];
     }
+
+    public function actionGauge()
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'data' => [
+                'type' => 'Gauge',
+                'chartData' => [
+                    ['Label', 'Value'],
+                    ['Memory', 80],
+                    ['CPU', 55],
+                    ['Network', 68],
+
+                ],
+                'chartOptions' => [
+                    'width' => 400,
+                    'height' => 120,
+                    'redFrom' => 90,
+                    'redTo' => 100,
+                    'yellowFrom' => 75,
+                    'yellowTo' => 90,
+                    'minorTicks' => 5,
+                ],
+                'settings' => [
+                    'packages' => [
+                        ['corechart', 'gauge',],
+                    ],
+                ],
+            ],
+        ];
+    }
 }

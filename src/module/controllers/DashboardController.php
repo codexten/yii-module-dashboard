@@ -51,22 +51,20 @@ class DashboardController extends Controller
                 'type' => 'ColumnChart',
                 'chartData' => [
                     ['', 'This Month', 'This Week', 'Today'],
-                    ['Jan', 5000, 4000,],
-                    ['Feb', 2500, 2000,],
-                    ['Mar', 4000, 2500,],
-                    ['Apr', 4500, 2300,],
-                    ['May', 3000, 1500,],
-                    ['June', 4000, 2000,],
-                    ['July', 4800, 2400,],
-                    ['Aug', 5000, 2500,],
+                    ['New Trs', 100, 50, 25],
                 ],
                 'chartOptions' => [
                     'title' => 'Optimization Performance Chart',
                     'vAxis' => [
                         'title' => 'No Of TRs',
                     ],
-                    'hAxis' => [
-                        'title' => 'Month',
+                    'series' => [
+                        1 => [
+                            'color' => '#a4c2f4',
+                        ],
+                        2 => [
+                            'color' => '#cfe2f3',
+                        ],
                     ],
                     'width' => 640,
                     'height' => 480,

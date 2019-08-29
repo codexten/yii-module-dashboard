@@ -54,7 +54,7 @@ class DashboardController extends Controller
                     ['New Trs', 100, 50, 25],
                 ],
                 'chartOptions' => [
-                    'title' => 'Optimization Performance Chart',
+                    'title' => 'New Tr Details',
                     'vAxis' => [
                         'title' => 'No Of TRs',
                     ],

@@ -205,38 +205,28 @@ class DashboardController extends Controller
                 'type' => 'PieChart',
                 'chartData' => [
                     ['A', 'B'],
-                    ['Savings', 40000],
-                    ['Bidded Cost', 60000],
-
+                    ['Active TRs', 100],
+                    ['Inactive TRs', 25],
+                    ['Completed TRs', 1250],
                 ],
                 'chartOptions' => [
                     'width' => 640,
                     'height' => 480,
                     'legacyScatterChartLabels' => true,
                     'is3D' => false,
-                    'pieHole' => '0.25',
+                    'pieHole' => '0.5',
                     'booleanRole' => 'certainty',
                     'slices' => [
                         0 => [
-                            'color' => '#6d9eeb',
+                            'color' => '#9fc5e8',
                         ],
                         1 => [
-                            'color' => '#666666',
+                            'color' => '#cccccc',
                         ],
-                    ]
-//                    'title' => 'Monthly Coffee Production by Country',
-//                    'vAxis' => [
-//                        'title' => 'Count',
-//                    ],
-//                    'hAxis' => [
-//                        'title' => 'Month',
-//                    ],
-//                    'seriesType' => 'bars',
-//                    'series' => [
-//                        1 => [
-//                            'type' => 'line',
-//                        ],
-//                    ],
+                        2 => [
+                            'color' => '#4a86e8',
+                        ],
+                    ],
                 ],
                 'settings' => [
                     'packages' => [

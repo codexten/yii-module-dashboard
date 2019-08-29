@@ -203,29 +203,33 @@ class DashboardController extends Controller
             'data' => [
                 'type' => 'PieChart',
                 'chartData' => [
-                    ['A', 'B'],
-                    ['Active TRs', 100],
-                    ['Inactive TRs', 25],
-                    ['Completed TRs', 1250],
+                    ['Task', 'Hours'],
+                    ['A', 19.2],
+                    ['B', 30.8],
+                    [null, 50.0],
                 ],
                 'chartOptions' => [
-                    'width' => 640,
-                    'height' => 480,
-                    'legacyScatterChartLabels' => true,
-                    'is3D' => false,
-                    'pieHole' => '0.5',
-                    'booleanRole' => 'certainty',
+                    'title' => 'Carbon Emission',
+                    'height' => 400,
+                    'width' => 400,
+                    'chartArea' => [
+                        'top' => 24,
+                    ],
+                    'colors' => [
+                        '#64B5F6',
+                        '#8BC34A',
+                    ],
+                    'legend' => 'none',
+                    'pieHole' => 0.4,
+                    'pieStartAngle' => 270,
+                    'pieSliceText' => 'value',
                     'slices' => [
-                        0 => [
-                            'color' => '#9fc5e8',
-                        ],
-                        1 => [
-                            'color' => '#cccccc',
-                        ],
                         2 => [
-                            'color' => '#4a86e8',
+                            'color' => 'transparent',
                         ],
                     ],
+                    'theme' => 'maximized',
+
                 ],
                 'settings' => [
                     'packages' => [

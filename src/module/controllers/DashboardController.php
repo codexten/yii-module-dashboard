@@ -130,7 +130,6 @@ class DashboardController extends Controller
                     ['Memory', 80],
                     ['CPU', 55],
                     ['Network', 68],
-
                 ],
                 'chartOptions' => [
                     'width' => 400,
@@ -143,7 +142,7 @@ class DashboardController extends Controller
                 ],
                 'settings' => [
                     'packages' => [
-                        ['corechart', 'gauge',],
+                        ['gauge', 'corechart', 'table'],
                     ],
                 ],
             ],

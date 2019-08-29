@@ -1,20 +1,20 @@
-import Test from './components/Test.vue'
 import DashboardWidget from './components/DashboardWidget.vue'
+import Chart from './components/Chart.vue'
 import VueGoogleCharts from 'vue-google-charts'
 
 // Install the components
 export function install (Vue) {
-  Vue.component('test', Test)
   Vue.component('dashboard-widget', DashboardWidget)
+  Vue.component('chart', Chart)
   Vue.use(VueGoogleCharts)
   /* -- Add more components here -- */
 }
 
 // Expose the components
 export {
-  Test,
   DashboardWidget,
-  VueGoogleCharts
+  VueGoogleCharts,
+  Chart,
   /* -- Add more components here -- */
 }
 

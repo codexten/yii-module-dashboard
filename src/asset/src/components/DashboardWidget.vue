@@ -1,67 +1,51 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="pull-right">
-                        <i v-on:click="refresh" class="fa fa-refresh"></i>
-                    </div>
-                </div>
-            </div>
-
-            <GChart
-                    type="ColumnChart"
-                    :data="chartData"
-                    :options="chartOptions"
-            />
-        </div>
+    <div>
+        <slot v-if="this.isLoading==false" v-bind:data="data"></slot>
+        <loading :active.sync="isLoading"
+                 :can-cancel="false"
+                 :is-full-page="false"
+                 :loader="'dots'"
+                 :color="'#007BFF'"></loading>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
+import Loading from 'vue-loading-overlay'
+
 export default {
   name: 'dashboard-widget',
+  props: ['fetchUrl'],
+  components: {
+    Loading,
+  },
   data () {
     return {
-      // Array will be automatically processed with visualization.arrayToDataTable function
-      chartData: [
-        ['Year', 'Sales', 'Expenses', 'Profit'],
-        ['2014', 1000, 400, 200],
-        ['2015', 1170, 460, 250],
-        ['2016', 660, 1120, 300],
-        ['2017', 1030, 540, 350]
-      ],
-      chartOptions: {
-        chart: {
-          title: 'Company Performance',
-          subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-        }
-      }
+      isLoading: true,
+      data: {},
     }
   },
   methods: {
-    startCallBack: function (x) {
-      console.log(x)
-    },
-    endCallBack: function (x) {
-      console.log(x)
-    },
-    refresh: function () {
-      this.render()
-    },
-    render: function () {
+    fetch: function () {
       this.isLoading = true
       setTimeout(() => {
         axios
-          .get('<?= $widget->renderUrl ?>')
-          .then(response => (this.content = response.data))
+          .get(this.fetchUrl)
+          .then(response => (this.data = response.data.data))
+          .catch(function (error) {
+            // handle error
+            console.log(error)
+          })
         this.isLoading = false
       }, 500)
-    }
+    },
+    refresh: function () {
+      this.fetch()
+    },
   },
   mounted: function () {
-    // this.render()
-  }
+    this.fetch()
+  },
 }
 </script>
 

@@ -1,7 +1,12 @@
 <?php
+
 namespace codexten\yii\modules\dashboard\models;
+
 use codexten\yii\db\ActiveRecord;
 use codexten\yii\modules\auth\models\User;
+use paulzi\jsonBehavior\JsonBehavior;
+use Yii;
+use codexten\yii\modules\dashboard\models\query\DashboardWidgetQuery;
 
 /**
  * This is the model class for table "{{%dashboard_widget}}".
@@ -11,7 +16,7 @@ use codexten\yii\modules\auth\models\User;
  * @property int $id
  * @property int $user_id
  * @property string $code
- * @property text $data
+ * @property string $data
  * @property int $status
  * @property int $created_at
  * @property int $updated_at
@@ -48,6 +53,20 @@ class DashboardWidget extends ActiveRecord
     }
 
     /**
+     * @inheritDoc
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors[] = [
+            'class' => JsonBehavior::class,
+            'attributes' => ['data'],
+        ];
+
+        return $behaviors;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function attributeLabels()
@@ -61,5 +80,14 @@ class DashboardWidget extends ActiveRecord
             'created_at' => Yii::t('codexten:dashboard', 'Created At'),
             'updated_at' => Yii::t('codexten:dashboard', 'Updated At'),
         ];
+    }
+
+    /**
+     * @inheritdoc
+     * @return DashboardWidgetQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new DashboardWidgetQuery(get_called_class());
     }
 }

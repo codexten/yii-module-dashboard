@@ -16,7 +16,7 @@ use codexten\yii\modules\dashboard\models\query\DashboardWidgetQuery;
  * @property int $id
  * @property int $user_id
  * @property string $code
- * @property string $data
+ * @property string|array $data
  * @property int $status
  * @property int $created_at
  * @property int $updated_at

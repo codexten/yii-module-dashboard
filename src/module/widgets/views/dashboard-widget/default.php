@@ -1,21 +1,26 @@
 <?php
 
 use codexten\yii\modules\dashboard\widgets\DashboardWidget;
-use codexten\yii\modules\dashboard\widgets\DashboardWidgetAsset;
-use yii\helpers\Url;
 use yii\web\View;
 
 /* @var $this View */
 /* @var $widget DashboardWidget */
 
-//DashboardWidgetAsset::register($this);
-
 $widget = $this->context;
 ?>
-<dashboard-widget fetch-url="<?= $widget->fetchUrl ?>" style="width: 900px; height: 500px;">
+<dashboard-widget fetch-url="<?= $widget->fetchUrl ?>" class="dashboard-widget">
     <template v-slot="widget">
 
-        <?= $widget->renderContent('content') ?>
+        <?php if ($widget->title): ?>
 
+            <div class="title"><?= $widget->title ?></div>
+
+        <?php endIf; ?>
+
+        <div class="content">
+
+            <?= $widget->renderContent('content') ?>
+            
+        </div>
     </template>
 </dashboard-widget>

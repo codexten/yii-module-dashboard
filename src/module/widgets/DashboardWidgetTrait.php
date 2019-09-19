@@ -7,6 +7,7 @@ use yii\helpers\Url;
 trait DashboardWidgetTrait
 {
     public $fetchUrl;
+    public $title;
 
     public function init()
     {

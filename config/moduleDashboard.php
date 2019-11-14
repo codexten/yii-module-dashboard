@@ -8,6 +8,7 @@ return [
         'dashboard' => [
             'class' => Module::class,
             'viewPath' => '@moduleDashboard/views',
+            'layoutPath' => '@app/views/layout',
             'controllerMap' => [
                 'dashboard' => [
                     'class' => DashboardController::class,
